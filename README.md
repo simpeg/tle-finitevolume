@@ -4,6 +4,7 @@ _Rowan Cockett, Lindsey Heagy and Doug Oldenburg_ - [The Leading Edge](http://li
 
 [![Made with MyST](https://img.shields.io/badge/made%20with-myst-orange)](https://curve.space/examples/pixels)
 [![Binder](http://mybinder.org/badge.svg)](http://mybinder.org:/repo/simpeg/tle-finitevolume)
+[![DOI](https://img.shields.io/badge/doi-10.1190%2Ftle35080703.1-blue)](https://doi.org/10.1190/tle35080703.1)
 
 These notebooks use [Python 3.8](https://docs.python.org/) and the open source packages [SimPEG](https://simpeg.xyz) and [discretize](https://discretize.simpeg.xyz).
 [SimPEG](https://simpeg.xyz) can be installed using the Python package manager `PyPi` or `conda` and running:
