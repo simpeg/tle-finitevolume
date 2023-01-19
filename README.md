@@ -16,12 +16,6 @@ conda install SimPEG --channel conda-forge
 
 In [index.ipynb](/notebooks/index.ipynb), we first give an overview and introduce the problem, in [mesh.ipynb](/notebooks/mesh.ipynb) we show how to create and work with a regular mesh, in [divergence.ipynb](divergence.ipynb) we build the discrete divergence operator, and in [weakformulation.ipynb](weakformulation.ipynb), we discretize and solve the DC equations using weak formulation.
 
-**Made With MyST**
-
-This paper and noteboks are made with [MyST Mardown](https://myst.tools). Which creates scientific documents, and can publish to the web (see [on Curvenote](https://next.curve.space/examples/pixels)).
-
-[![](/images/screenshot.png)](https://next.curve.space/examples/pixels)
-
 **Repository Contents**
 
 - [Paper](paper.md)
@@ -37,3 +31,9 @@ This paper and noteboks are made with [MyST Mardown](https://myst.tools). Which 
 > Rowan Cockett, Lindsey J. Heagy, and Douglas W. Oldenburg (2016).
 > "Pixels and their neighbors: Finite volume." The Leading Edge, 35(8), 703–706.
 > https://doi.org/10.1190/tle35080703.1
+
+**Made With MyST**
+
+This paper and noteboks are made with [MyST Mardown](https://myst.tools). Which creates scientific documents, and can publish to the web (see [on Curvenote](https://next.curve.space/examples/pixels)).
+
+[![](/images/screenshot.png)](https://next.curve.space/examples/pixels)
