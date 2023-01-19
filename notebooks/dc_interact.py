@@ -2,7 +2,8 @@
 # the mesh class with differential operators from SimPEG
 # matplotlib, the basic python plotting package
 import numpy as np
-from SimPEG import Mesh, Utils, Solver
+import discretize
+from SimPEG import utils, Solver
 import matplotlib.pyplot as plt
 plt.set_cmap(plt.get_cmap('viridis'))  # use a nice colormap!
 
@@ -16,7 +17,7 @@ def dc_resistivity(
     rcParams['figure.figsize'] = 10, 10
 
     # Define a unit-cell mesh
-    mesh = Mesh.TensorMesh([100, 100])  # setup a mesh on which to solve
+    mesh = discretize.TensorMesh([100, 100])  # setup a mesh on which to solve
 
     # model parameters
     sigma_background = 10**log_sigma_background
@@ -43,21 +44,21 @@ def dc_resistivity(
     source_locs = [a_loc, b_loc]
 
     # locate it on the mesh
-    source_loc_inds = Utils.closestPoints(mesh, source_locs)
+    source_loc_inds = mesh.closest_points_index(source_locs)
     a_loc_mesh = mesh.gridCC[source_loc_inds[0], :]
     b_loc_mesh = mesh.gridCC[source_loc_inds[1], :]
 
     if plot_type == 'conductivity':
-        plt.colorbar(mesh.plotImage(sigma)[0])
+        plt.colorbar(mesh.plot_image(sigma)[0])
         plt.plot(a_loc_mesh[0], a_loc_mesh[1], 'wv', markersize=8)
         plt.plot(b_loc_mesh[0], b_loc_mesh[1], 'w^', markersize=8)
         plt.title('electrical conductivity, $\sigma$')
         return
 
     # Assemble and solve the DC resistivity problem
-    Div = mesh.faceDiv
-    Sigma = mesh.getFaceInnerProduct(sigma, invProp=True, invMat=True)
-    Vol = Utils.sdiag(mesh.vol)
+    Div = mesh.face_divergence
+    Sigma = mesh.get_face_inner_product(sigma, invert_model=True, invert_matrix=True)
+    Vol = utils.sdiag(mesh.cell_volumes)
 
     # assemble the system matrix
     A = Vol * Div * Sigma * Div.T * Vol
@@ -71,17 +72,17 @@ def dc_resistivity(
     phi = Ainv * q
 
     if plot_type == 'potential':
-        plt.colorbar(mesh.plotImage(phi)[0])
+        plt.colorbar(mesh.plot_image(phi)[0])
         plt.title('Electric Potential, $\phi$')
         return
 
     if plot_type == 'current':
-        j = Sigma * mesh.faceDiv.T * Utils.sdiag(mesh.vol) * phi
-        plt.colorbar(mesh.plotImage(
+        j = Sigma * mesh.face_divergence.T * utils.sdiag(mesh.cell_volumes) * phi
+        plt.colorbar(mesh.plot_image(
             j,
-            vType='F',
+            v_type='F',
             view='vec',
-            streamOpts={'color': 'w'}
+            stream_opts={'color': 'w'}
         )[0])
         plt.title('Current, $j$')
         return

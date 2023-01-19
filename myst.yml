@@ -1,0 +1,39 @@
+version: 1
+project:
+  title: 'Pixels and Their Neighbours: Finite Volume'
+  license:
+    content: CC-BY-SA-3.0
+    code: MIT
+  subject: tutorial
+  venue:
+    title: The Leading Edge
+  open_access: true
+  doi: 10.1190/tle35080703.1
+  github: https://github.com/rowanc1/pixels
+  date: 2016/08/01
+  authors:
+    - name: Rowan Cockett
+      orcid: 0000-0002-7859-8394
+      corresponding: true
+      email: rowan@curvenote.com
+      affiliations:
+        - University of British Columbia
+    - name: Lindsey Heagy
+      orcid: 0000-0002-1551-5926
+      affiliations:
+        - University of British Columbia
+    - name: Douglas Oldenburg
+      orcid: 0000-0002-4327-2124
+      affiliations:
+        - University of British Columbia
+site:
+  title: 'Pixels and Their Neighbours: Finite Volume'
+  projects:
+    - slug: pixels-and-their-neighbours
+      path: .
+  nav: []
+  actions:
+    - title: Download PDF
+      url: ./cockett-heagy-oldenburg-2016.pdf
+      static: true
+  logo_text: Pixels and their neighbours
