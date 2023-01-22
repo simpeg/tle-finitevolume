@@ -24,7 +24,7 @@ In [index.ipynb](/notebooks/index.ipynb), we first give an overview and introduc
   - [index](/notebooks/index.ipynb)
   - [mesh](/notebooks/mesh.ipynb)
   - [divergence](/notebooks/divergence.ipynb)
-  - [weak-forulation](/notebooks/weak-formulation.ipynb)
+  - [weak-formulation](/notebooks/weak-formulation.ipynb)
   - [all together now](/notebooks/all-together-now.ipynb)
 
 **Cite Us 🙏**
@@ -35,6 +35,6 @@ In [index.ipynb](/notebooks/index.ipynb), we first give an overview and introduc
 
 **Made With MyST**
 
-This paper and noteboks are made with [MyST Mardown](https://myst.tools). Which creates scientific documents, and can publish to the web (see [on Curvenote](https://next.curve.space/examples/pixels)).
+This paper and notebooks are made with [MyST Markdown](https://myst.tools). Which creates scientific documents, and can publish to the web (see [on Curvenote](https://next.curve.space/examples/pixels)).
 
 [![](/images/screenshot.png)](https://next.curve.space/examples/pixels)
