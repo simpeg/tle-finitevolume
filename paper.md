@@ -1,10 +1,16 @@
 ---
 title: Pixels and Their Neighbours
+short_title: Finite Volume
+license:
+  content: CC-BY-SA-3.0
 keywords:
-  - finite-volume method
-  - direct current
-  - resistivity
+  - Finite volume
+  - Direct current
+  - Resistivity
   - DC equations
+export:
+  - format: pdf
+    template: lapreprint
 ---
 
 +++ { "part": "abstract" }
@@ -14,21 +20,26 @@ In this tutorial we take you on the journey from continuous equations to their d
 +++
 
 ```{important}
-This article was originally published in the Leading Edge ([Cockett et al., 2016](http://library.seg.org/doi/10.1190/tle35080703.1)) and is licensed under [CC-BY-SA-3.0](https://creativecommons.org/licenses/by-sa/3.0/). Associated notebooks are available on [GitHub](https://github.com/simpeg/tle-finitevolume) and can be run online with [MyBinder](http://mybinder.org/repo/simpeg/tle-finitevolume).
+This article was originally published in the Leading Edge ([Cockett et al., 2016](http://library.seg.org/doi/10.1190/tle35080703.1)) and is licensed under [CC-BY-SA-3.0](https://creativecommons.org/licenses/by-sa/3.0/).
 ```
 
 +++
 
 # DC Resistivity
 
+DC resistivity surveys obtain information about subsurface electrical conductivity, $\sigma$. This physical property is often diagnostic in mineral exploration, geotechnical, environmental and hydrogeologic problems, where the target of interest has a significant electrical conductivity contrast from the background. In a DC resistivity survey, steady state currents are set up in the subsurface by injecting current through a positive electrode and completing the circuit with a return electrode ([](#dc-setup)).
+
 ```{figure} images/dc-setup.png
-:width: 60%
+:width: 90%
+:class: col-margin-right row-span-2
 :name: dc-setup
 
 Setup of a DC resistivity survey.
 ```
 
-DC resistivity surveys obtain information about subsurface electrical conductivity, $\sigma$. This physical property is often diagnostic in mineral exploration, geotechnical, environmental and hydrogeologic problems, where the target of interest has a significant electrical conductivity contrast from the background. In a DC resistivity survey, steady state currents are set up in the subsurface by injecting current through a positive electrode and completing the circuit with a return electrode ([](#dc-setup)). The equations for DC resistivity are derived in ([](#dc-eqns)). Conservation of charge (which can be derived by taking the divergence of Ampere's law at steady state) connects the divergence of the current density everywhere in space to the source term which consists of two point sources, one positive and one negative. The flow of current sets up electric fields according to Ohm's law, which relates current density to electric fields through the electrical conductivity. From Faraday's law for steady state fields, we can describe the electric field in terms of a scalar potential, $\phi$, which we sample at potential electrodes to obtain data in the form of potential differences.
+The equations for DC resistivity are derived in ([](#dc-eqns)). Conservation of charge (which can be derived by taking the divergence of Ampere's law at steady state) connects the divergence of the current density everywhere in space to the source term which consists of two point sources, one positive and one negative.
+
+The flow of current sets up electric fields according to Ohm's law, which relates current density to electric fields through the electrical conductivity. From Faraday's law for steady state fields, we can describe the electric field in terms of a scalar potential, $\phi$, which we sample at potential electrodes to obtain data in the form of potential differences.
 
 ```{figure} images/dc-eqns.png
 :name: dc-eqns
@@ -59,8 +70,9 @@ To discretize the first order differential equations we consider a single cell i
 
 ```{figure} images/divergence.png
 :name: fig-div
-:align: center
-:width: 100%
+:align: left
+:class: col-page-right
+:width: 90%
 
 Geometrical definition of the divergence and the discretization.
 ```
@@ -99,7 +111,13 @@ $$\mathbf{M}_f(\sigma^{-1}) \mathbf{j} = \mathbf{D}^\top \text{diag}(\mathbf{v})
 
 Note that now all variables are defined over the entire mesh. We could solve this coupled system or we could eliminate $\mathbf{j}$ and solve for $\phi$ directly (a smaller, second-order system).
 
-$$\text{diag}({\mathbf{v}}) \mathbf{D}\mathbf{M}_f(\sigma^{-1})^{-1}\mathbf{D}^\top\text{diag}({\mathbf{v}})\phi = \mathbf{q}$$
++++{"class": "shaded"}
+
+```{math}
+\text{diag}({\mathbf{v}}) \mathbf{D}\mathbf{M}_f(\sigma^{-1})^{-1}\mathbf{D}^\top\text{diag}({\mathbf{v}})\phi = \mathbf{q}
+```
+
++++
 
 By solving this system matrix, we obtain a solution for the electric potential $\phi$ everywhere in the domain. Creating predicted data from this requires an interpolation to the electrode locations and subtraction to obtain potential differences!
 
@@ -113,6 +131,10 @@ Electric potential on (a) tensor and (b) curvilinear meshes.
 
 Moving from continuous equations to their discrete analogues is fundamental in geophysical simulations. In this tutorial, we have started from a continuous description of the governing equations for the DC resistivity problem, selected locations on the mesh to discretize the continuous functions, constructed differential operators by considering one cell at a time, assembled and solved the discrete DC equations. Composing the finite volume system in this way allows us to move to different meshes and incorporate various types of boundary conditions that are often necessary when solving these equations in practice.
 
-```{important}
++++ {"part": "data_availability"}
+
+Associated notebooks are available on [GitHub](https://github.com/simpeg/tle-finitevolume) and can be run online with [MyBinder](http://mybinder.org/repo/simpeg/tle-finitevolume).
+
++++ {"part": "appendix"}
+
 All article content, except where otherwise noted (including republished material), is licensed under a Creative Commons Attribution 3.0 Unported License (CC BY-SA). See <https://creativecommons.org/licenses/by-sa/3.0/>. Distribution or reproduction of this work in whole or in part commercially or noncommercially requires full attribution of the [original publication](https://library.seg.org/doi/10.1190/tle35080703.1), including its digital object identifier (DOI). Derivatives of this work must carry the same license. All rights reserved.
-```

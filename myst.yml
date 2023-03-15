@@ -1,6 +1,7 @@
 version: 1
 project:
-  title: 'Pixels and Their Neighbours: Finite Volume'
+  title: Pixels and Their Neighbours
+  subtitle: Methods for Finite Volume Simulations
   license:
     content: CC-BY-SA-3.0
     code: MIT
@@ -9,7 +10,7 @@ project:
     title: The Leading Edge
   open_access: true
   doi: 10.1190/tle35080703.1
-  github: https://github.com/rowanc1/pixels
+  github: https://github.com/simpeg/tle-finitevolume
   date: 2016/08/01
   authors:
     - name: Rowan Cockett
@@ -32,6 +33,7 @@ site:
     - slug: pixels-and-their-neighbours
       path: .
   nav: []
+  template: https://github.com/executablebooks/myst-article-theme.git
   actions:
     - title: Download PDF
       url: ./cockett-heagy-oldenburg-2016.pdf
