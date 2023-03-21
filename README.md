@@ -35,6 +35,6 @@ In [index.ipynb](/notebooks/index.ipynb), we first give an overview and introduc
 
 **Made With MyST**
 
-This paper and notebooks are made with [MyST Markdown](https://myst.tools). Which creates scientific documents, and can publish to the web (see [on Curvenote](https://next.curve.space/examples/pixels)).
+This paper and notebooks are made with [MyST Markdown](https://myst-tools.org). Which creates scientific documents, and can publish to the web (see [on Curvenote](https://next.curve.space/examples/pixels)).
 
 [![](/images/screenshot.png)](https://next.curve.space/examples/pixels)
