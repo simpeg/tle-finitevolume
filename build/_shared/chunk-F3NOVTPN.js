@@ -1,0 +1,1 @@
+import{a as i,b as s}from"/tle-finitevolume/build/_shared/chunk-22THSYFL.js";s();var m=[],g=function(u,r,f){let a=i(f||r),d=!r||r.cascade===void 0||r.cascade===null?!0:r.cascade;return l(u);function l(c,h,o){let e=c.children||m,n=-1,t=0;if(a(c,h,o))return null;if(e.length>0){for(;++n<e.length;)l(e[n],n,c)&&(e[t++]=e[n]);if(d&&!t)return null;e.length=t}return c}};export{g as a};
