@@ -27,13 +27,22 @@ project:
       orcid: 0000-0002-4327-2124
       affiliations:
         - University of British Columbia
+  # thebe: true
+  exports:
+    - format: pdf
+      article: paper.md
+    - format: docx
+      article: paper.md
+    - format: jats
+      article: paper.md
+      sub_articles:
+        - notebooks/overview.ipynb
+        - notebooks/mesh.ipynb
+        - notebooks/divergence.ipynb
+        - notebooks/weak-formulation.ipynb
+        - notebooks/all-together-now.ipynb
 site:
   title: 'Pixels and Their Neighbours: Finite Volume'
-  projects:
-    - slug: pixels-and-their-neighbours
-      path: .
-  nav: []
-  template: https://github.com/executablebooks/myst-article-theme.git
   actions:
     - title: Download PDF
       url: ./cockett-heagy-oldenburg-2016.pdf
