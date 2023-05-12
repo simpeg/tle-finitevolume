@@ -1,4 +1,4 @@
-name: deploy
+name: MyST Deploy
 on:
   push:
     branches: [main, dep-*]
@@ -11,10 +11,12 @@ jobs:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
         with:
-          node-version: 16.x
-      - run: npm install -g myst-cli
-      - run: myst build --html
-      - name: Deploy
+          node-version: 18.x
+      - name: Install MyST
+        run: npm install -g myst-cli
+      - name: Build HTML Assets
+        run: myst build --html
+      - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
