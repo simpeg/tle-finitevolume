@@ -3,9 +3,9 @@ on:
   push:
     branches: [main, dep-*]
 env:
-  BASE_URL: /tle-finitevolume
+  BASE_URL: /${{ github.event.repository.name }}
 jobs:
-  lint:
+  deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
