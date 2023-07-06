@@ -18,8 +18,8 @@
 format: jb-book
 root: paper
 chapters:
-  - file: notebooks/overview
-  - file: notebooks/mesh
-  - file: notebooks/divergence
-  - file: notebooks/weak-formulation
-  - file: notebooks/all-together-now
+  - file: overview.ipynb
+  - file: mesh.ipynb
+  - file: divergence.ipynb
+  - file: weak-formulation.ipynb
+  - file: all-together-now.ipynb
