@@ -27,7 +27,9 @@ project:
       orcid: 0000-0002-4327-2124
       affiliations:
         - University of British Columbia
-  # thebe: true
+  thebe:
+    binder: true
+    github: simpeg/tle-finitevolume
   exports:
     - format: pdf
       article: paper.md
@@ -41,6 +43,11 @@ project:
         - notebooks/divergence.ipynb
         - notebooks/weak-formulation.ipynb
         - notebooks/all-together-now.ipynb
+    - format: meca
+  requirements:
+    - requirements.txt
+  resources:
+    - notebooks/all-together-now.ipynb
 site:
   title: 'Pixels and Their Neighbours: Finite Volume'
   actions:

@@ -18,7 +18,7 @@
 format: jb-book
 root: paper
 chapters:
-  - file: notebooks/index
+  - file: notebooks/overview
   - file: notebooks/mesh
   - file: notebooks/divergence
   - file: notebooks/weak-formulation
