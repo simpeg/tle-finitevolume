@@ -28,8 +28,10 @@ project:
       affiliations:
         - University of British Columbia
   thebe:
-    binder: true
-    github: simpeg/tle-finitevolume
+    binder:
+      url: https://xhrtcvh6l53u.curvenote.dev/services/binder/
+      repo: curvenote/tle-finitevolume
+      ref: HEAD
   exports:
     - format: pdf
       article: paper.md
