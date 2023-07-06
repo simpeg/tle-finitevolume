@@ -9,8 +9,15 @@ _Rowan Cockett, Lindsey Heagy and Doug Oldenburg_ - [The Leading Edge](http://li
 These notebooks use [Python 3.8](https://docs.python.org/) and the open source packages [SimPEG](https://simpeg.xyz) and [discretize](https://discretize.simpeg.xyz).
 [SimPEG](https://simpeg.xyz) can be installed using the Python package manager `PyPi` or `conda` and running:
 
-```
+```bash
 conda install SimPEG --channel conda-forge
+```
+
+For working locally:
+
+```bash
+conda env create -f environment.yml
+conda activate pixels
 ```
 
 **Overview**
@@ -35,6 +42,6 @@ In [index.ipynb](/notebooks/index.ipynb), we first give an overview and introduc
 
 **Made With MyST**
 
-This paper and notebooks are made with [MyST Markdown](https://myst-tools.org). Which creates scientific documents, and can publish to the web (see [on Curvenote](https://next.curve.space/examples/pixels)).
+This paper and notebooks are made with [MyST Markdown](https://mystmd.org). Which creates scientific documents, and can publish to the web (see [on Curvenote](https://next.curve.space/examples/pixels)).
 
 [![](/images/screenshot.png)](https://next.curve.space/examples/pixels)
