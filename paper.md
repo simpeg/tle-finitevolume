@@ -1,6 +1,7 @@
 ---
 title: Pixels and Their Neighbours
 short_title: Finite Volume
+description: A tutorial of the finite volume method for the Direct Current (DC) resistivity problem.
 license:
   content: CC-BY-SA-3.0
 keywords:
@@ -111,13 +112,9 @@ $$\mathbf{M}_f(\sigma^{-1}) \mathbf{j} = \mathbf{D}^\top \text{diag}(\mathbf{v})
 
 Note that now all variables are defined over the entire mesh. We could solve this coupled system or we could eliminate $\mathbf{j}$ and solve for $\phi$ directly (a smaller, second-order system).
 
-+++{"class": "shaded"}
-
 ```{math}
 \text{diag}({\mathbf{v}}) \mathbf{D}\mathbf{M}_f(\sigma^{-1})^{-1}\mathbf{D}^\top\text{diag}({\mathbf{v}})\phi = \mathbf{q}
 ```
-
-+++
 
 By solving this system matrix, we obtain a solution for the electric potential $\phi$ everywhere in the domain. Creating predicted data from this requires an interpolation to the electrode locations and subtraction to obtain potential differences!
 
@@ -128,6 +125,9 @@ By solving this system matrix, we obtain a solution for the electric potential $
 
 Electric potential on (a) tensor and (b) curvilinear meshes.
 ```
+
+:::{figure} #interactive
+:::
 
 Moving from continuous equations to their discrete analogues is fundamental in geophysical simulations. In this tutorial, we have started from a continuous description of the governing equations for the DC resistivity problem, selected locations on the mesh to discretize the continuous functions, constructed differential operators by considering one cell at a time, assembled and solved the discrete DC equations. Composing the finite volume system in this way allows us to move to different meshes and incorporate various types of boundary conditions that are often necessary when solving these equations in practice.
 

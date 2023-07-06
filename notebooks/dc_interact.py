@@ -5,7 +5,6 @@ import numpy as np
 import discretize
 from SimPEG import utils, Solver
 import matplotlib.pyplot as plt
-plt.set_cmap(plt.get_cmap('viridis'))  # use a nice colormap!
 
 
 def dc_resistivity(
