@@ -127,6 +127,7 @@ Electric potential on (a) tensor and (b) curvilinear meshes.
 ```
 
 :::{figure} #interactive
+Interactive output of the a DC Resistivity simulation.
 :::
 
 Moving from continuous equations to their discrete analogues is fundamental in geophysical simulations. In this tutorial, we have started from a continuous description of the governing equations for the DC resistivity problem, selected locations on the mesh to discretize the continuous functions, constructed differential operators by considering one cell at a time, assembled and solved the discrete DC equations. Composing the finite volume system in this way allows us to move to different meshes and incorporate various types of boundary conditions that are often necessary when solving these equations in practice.
