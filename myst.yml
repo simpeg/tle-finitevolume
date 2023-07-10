@@ -40,16 +40,16 @@ project:
     - format: jats
       article: paper.md
       sub_articles:
-        - notebooks/overview.ipynb
-        - notebooks/mesh.ipynb
-        - notebooks/divergence.ipynb
-        - notebooks/weak-formulation.ipynb
-        - notebooks/all-together-now.ipynb
+        - overview.ipynb
+        - mesh.ipynb
+        - divergence.ipynb
+        - weak-formulation.ipynb
+        - all-together-now.ipynb
     - format: meca
   requirements:
     - requirements.txt
   resources:
-    - notebooks/all-together-now.ipynb
+    - all-together-now.ipynb
 site:
   title: 'Pixels and Their Neighbours: Finite Volume'
   actions:
