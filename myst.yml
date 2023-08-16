@@ -17,17 +17,30 @@ project:
       orcid: 0000-0002-7859-8394
       corresponding: true
       email: rowan@curvenote.com
-      affiliations:
-        - University of British Columbia
+      twitter: rowancockett
+      github: rowanc1
+      affiliation: ubc
+      roles: writing
+      url: https://row1.ca
     - name: Lindsey Heagy
       orcid: 0000-0002-1551-5926
-      affiliations:
-        - University of British Columbia
+      affiliation: ubc
     - name: Douglas Oldenburg
       orcid: 0000-0002-4327-2124
-      affiliations:
-        - University of British Columbia
-  thebe:
+      affiliation: ubc
+  affiliations:
+    - id: ubc
+      institution: University of British Columbia
+      ror: https://ror.org/03rmrcq20
+      isni: 0000 0001 2288 9830
+      department: Department of Earth, Ocean and Atmospheric Sciences
+      address: 2020 – 2207 Main Mall
+      city: Vancouver
+      region: British Columbia
+      country: Canada
+      postal_code: V6T 1Z4
+      phone: 1 (604) 822-2449
+  jupyter:
     binder:
       url: https://xhrtcvh6l53u.curvenote.dev/services/binder/
       repo: curvenote/tle-finitevolume
@@ -50,8 +63,10 @@ project:
     - requirements.txt
   resources:
     - all-together-now.ipynb
+  banner: ./images/banner.png
 site:
   title: 'Pixels and Their Neighbours: Finite Volume'
+  template: article-theme
   actions:
     - title: Download PDF
       url: ./cockett-heagy-oldenburg-2016.pdf
