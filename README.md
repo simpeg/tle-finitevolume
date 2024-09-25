@@ -40,7 +40,7 @@ In [index.ipynb](/notebooks/index.ipynb), we first give an overview and introduc
 > "Pixels and their neighbors: Finite volume." The Leading Edge, 35(8), 703–706.
 > https://doi.org/10.1190/tle35080703.1
 
-**Made With MyST**
+**Made With MyST and Curvenote**
 
 This paper and notebooks are made with [MyST Markdown](https://mystmd.org). Which creates scientific documents, and can publish to the web (see [on Curvenote](https://next.curve.space/examples/pixels)).
 
